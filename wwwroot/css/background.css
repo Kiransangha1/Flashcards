@@ -1,0 +1,102 @@
+body {
+    color: white;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to top, #b6cedd 0%, #8ed0eb 100%);
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.card {
+    position: absolute;
+    z-index: 0;
+    background: #fff;
+    width: 150px;
+    height: 100px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: float 8s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+.card:nth-child(1) {
+    top: 15%;
+    left: 10%;
+    animation-duration: 7s;
+    animation-delay: 0s;
+}
+
+.card:nth-child(2) {
+    top: 55%;
+    left: 60%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+.card:nth-child(3) {
+    top: 72%;
+    left: 14%;
+    animation-duration: 9s;
+    animation-delay: 2s;
+}
+
+.card:nth-child(4) {
+    top: 50%;
+    left: 85%;
+    animation-duration: 5s;
+    animation-delay: 3s;
+}
+
+.card:nth-child(5) {
+    top: 85%;
+    left: 50%;
+    animation-duration: 10s;
+    animation-delay: 4s;
+}
+
+.card:nth-child(6) {
+    top: 10%;
+    left: 75%;
+    animation-duration: 8s;
+    animation-delay: 5s;
+}
+
+.box {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    width: 63.2%;
+    height: 64.5%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: none;
+    visibility: visible;
+    backdrop-filter: blur(5px);
+}
+
+h1 {
+    font-size: 60px;
+}
+
+@keyframes animate {
+    to {
+        background-position-x: 100px;
+    }
+}

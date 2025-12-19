@@ -1,0 +1,65 @@
+body {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to top, #b6cedd 0%, #e2ebf0 100%);
+}
+
+.box {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    width: 63.2%;
+    height: 64.5%;
+    margin-left: 13.2%;
+    margin-top: 42px;
+    padding: 40px;
+    color: white;
+    text-shadow: #ad7139d8;
+    transition: opacity 0.3s ease 5s;
+    visibility: hidden;
+}
+
+.welcome {
+    margin-top: 30px;
+    font-size: 170px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    background: url('https://t4.ftcdn.net/jpg/07/79/73/13/360_F_779731370_VAzX2cu7Hls7TOriYnd35B2qbCjqfofJ.jpg');
+    background-size: contain;
+    background-clip: text;
+    color: transparent;
+    animation: animate 5s linear infinite, resize 5s forwards;
+}
+
+@keyframes animate {
+    to {
+        background-position-x: 100px;
+    }
+}
+
+@keyframes resize {
+    to {
+        font-size: 3rem;
+    }
+}
+
+@keyframes showBox {
+    to {
+        opacity: 0.9;
+        visibility: visible;
+    }
+}
+
+.box.show {
+    animation: showBox 6s forwards 6s;
+}
+
+.welcome2{
+    color: rgb(131, 189, 212);
+}

@@ -1,0 +1,117 @@
+@{
+    ViewData["Title"] = "BreakTime";
+    Layout = "_Empty";
+}
+
+<style>
+    .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120%;
+        z-index: -1;
+        background-image: url('https://cdn.prod.website-files.com/632264efe4bf88d3b73ab56c/64d272ab22b1792f9359ea5b_breathe.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .image-container {
+        margin-top: 550px;
+        margin-left: 250px;
+        position: fixed;
+    }
+
+    .controls {
+        margin-bottom: 50%;
+    }
+
+    .return {
+        color: white;
+        background-color: #367272e0;
+        margin-left: 465px;
+    }
+</style>
+
+
+<div class="image-container">
+    <img class="background" />
+    <div class="wavelength-container">
+        <canvas id="wavelengthCanvas" width="800" height="200"></canvas>
+    </div>
+    <div class="controls">
+        <label for="speedOptions">Select Speed:</label>
+        <select id="speedOptions" onchange="changeSpeed(this.value)">
+            <option value="0.0065">Expert</option>
+            <option value="0.0075">Advanced</option>
+            <option value="0.011">Intermediate</option>
+            <option value="0.016" selected>Moderate</option>
+            <option value="0.02">Easy</option>
+        </select>
+            <a asp-controller="Folder" asp-action="Dashboard" class="btn return">Return Home</a>
+    </div>
+</div>
+
+</div>
+
+<script>
+    const canvas = document.getElementById('wavelengthCanvas');
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+
+    let amplitude = height / 4;
+    let frequency = 0.02;
+    let phase = 0;
+    let speed = 0.016;
+
+    const backgroundImage = new Image();
+    backgroundImage.src = '/image/calm-ocean-waves-011771301_prevstill.webp';
+
+    backgroundImage.onload = function () {
+        animate();
+    };
+
+    function drawWavelength() {
+        ctx.clearRect(0, 0, width, height);
+
+        ctx.drawImage(backgroundImage, 0, 0, width, height);
+
+        ctx.beginPath();
+        ctx.strokeStyle = 'orange';
+        ctx.lineWidth = 15;
+
+        for (let x = 0; x < width; x++) {
+            const y = height / 2 + amplitude * Math.sin(frequency * x + phase);
+            ctx.lineTo(x, y);
+        }
+
+        ctx.stroke();
+    }
+
+    function drawCircle(y) {
+        const circleX = width / 2;
+        ctx.beginPath();
+        ctx.arc(circleX, y, 7, 0, Math.PI * 2);
+        ctx.fillStyle = 'brown';
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    function animate() {
+        phase += speed;
+        drawWavelength();
+
+        const circleY = height / 2 + amplitude * Math.sin(frequency * (width / 2) + phase);
+        drawCircle(circleY);
+
+        requestAnimationFrame(animate);
+    }
+
+    function changeSpeed(newSpeed) {
+        speed = parseFloat(newSpeed);
+    }
+
+    window.onload = animate;
+</script>

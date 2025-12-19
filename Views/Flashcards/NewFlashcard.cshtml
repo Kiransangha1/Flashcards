@@ -1,0 +1,41 @@
+@{
+    Layout = "_Empty";
+}
+
+<link rel="stylesheet" href="~/css/wave.css">
+
+<div class="background">
+
+@model Flashcard
+<div class="folderbox">
+
+
+<h1>Add a new flashcard</h1>
+
+<form asp-action="CreateFlashcard" asp-controller="Flashcards" method="post">
+    <input type="hidden" name="FolderId" value="@Model.FolderId" />
+    <div class="my-3">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title">
+        <span class="text-danger" asp-validation-for="Title"></span>
+    </div>
+    <div class="my-3">
+        <label asp-for="Description"></label>
+        <input asp-for="Description">
+        <span class="text-danger" asp-validation-for="Description"></span>
+    </div>
+    <button class="btn">Add</button>
+</form>
+</div>
+ <div class="wave-container">
+        <svg class="wave wave1" viewBox="0 0 1200 200" preserveAspectRatio="none">
+            <path d="M0,100 C300,200 900,0 1200,100 L1200,200 L0,200 Z" />
+        </svg>
+        <svg class="wave wave2" viewBox="0 0 1200 200" preserveAspectRatio="none">
+            <path d="M0,120 C400,20 800,200 1200,80 L1200,200 L0,200 Z" />
+        </svg>
+        <svg class="wave wave3" viewBox="0 0 1200 200" preserveAspectRatio="none">
+            <path d="M0,90 C250,160 950,30 1200,100 L1200,200 L0,200 Z" />
+        </svg>
+    </div>
+</div>

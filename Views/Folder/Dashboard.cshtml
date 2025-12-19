@@ -1,0 +1,88 @@
+@{
+    ViewData["Title"] = "welcome";
+    Layout = "_Empty";
+    int? UserId = Context.Session.GetInt32("UserId");
+}
+<div class="background">
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
+        <div class="container-fluid">
+            <a href="@Url.Action("TakeABreak", "Folder")" class="btn">Break Time</a>
+            <h1 class="welcome2">Welcome @Context.Session.GetString("Username")!</h1>
+            <div class="d-flex justify-content-center align-items-center gap-3">
+                <form asp-action="Logout" asp-controller="User" method="post">
+                    <button class="btn btn-link">Logout</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    @foreach (Folder f in Model)
+    {
+        <div style="display: flex; align-items: center; justify-content: center;">
+                <div class="folder">
+                <a asp-action="AllFlashcards" asp-controller="Flashcards" asp-route-FolderId="@f.FolderId">
+                    <p class="text">@f.FolderName</p>
+                </a>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <form asp-route-folderId="@f.FolderId" asp-action="DeleteFolder" asp-controller="Folder" method="Post">
+                        <div class="delete-icon" onclick="this.closest('form').submit();" style="cursor: pointer;">
+                            <img src="~/image/delete.png" alt="Delete" style="width: 20px; height: 20px;">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+        <a href="@Url.Action("NewFolder", "Folder")" style="display: flex; align-items: center; justify-content: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/6899/6899250.png" alt="Photo"
+                style="width: 80px; height: 80px;" />
+        </a>
+    </div>
+</div>
+<style>
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 30px;
+        width: 100%;
+        min-height: 100vh;
+        background: linear-gradient(to top, #b6cedd 0%, #87CEEB 100%);
+        z-index: -1;
+    }
+
+    .btn {
+        color: white;
+        background-color: rgb(109, 184, 214);
+    }
+
+    .text {
+        text-align: center;
+        color: black;
+        font-weight: bold;
+    }
+
+    .folder {
+        margin: 20px;
+        width: 400px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 2px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+        backdrop-filter: blur(5px);
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .delete-icon {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+</style>

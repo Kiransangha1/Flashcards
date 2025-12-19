@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Empty";
+    int? UserId = Context.Session.GetInt32("UserId");
+    bool LoggedIn = UserId != null;
+}
+
+<link rel="stylesheet" href="~/css/background.css">
+
+<div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+</div>
+<div>
+    <div class="row box show">
+    <h1 class="text-center welcome">FlashFocus</h1>
+        @await Html.PartialAsync("_Register", new User())
+        @await Html.PartialAsync("_Login")
+</div>
+
+    @if (LoggedIn)
+    {
+        <a asp-action="Dashboard" asp-controller="Folder" class="btn btn-secondary">You're logged in, head to All Posts by clicking here</a>
+    }
+</div>
+
+
+

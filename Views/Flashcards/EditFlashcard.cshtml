@@ -1,0 +1,40 @@
+@{
+    Layout = "_Empty";
+}
+
+<link rel="stylesheet" href="~/css/wave.css">
+
+@model Flashcard
+
+<div class="background">
+    <div class="folderbox">
+        <h1>Edit</h1>
+        <form asp-route-FlashcardId="@Model.FlashcardId" asp-action="UpdateFlashcard" asp-controller="Flashcards"
+            method="post">
+            <div class="my-3">
+                <label asp-for="Title">Title</label>
+                <input asp-for="Title" class="form-control" value="@Model.Title">
+                <span class="text-danger" asp-validation-for="Title"></span>
+            </div>
+            <div class="my-3">
+                <label asp-for="Description">Description</label>
+                <input asp-for="Description" class="form-control" value="@Model.Description">
+                <span class="text-danger" asp-validation-for="Description"></span>
+            </div>
+            <input type="hidden" asp-for="FolderId" />
+            <span asp-validation-for="FolderId" class="text-danger"></span>
+            <button type="submit" class="btn">Update Flashcard</button>
+        </form>
+    </div>
+    <div class="wave-container">
+        <svg class="wave wave1" viewBox="0 0 1200 200" preserveAspectRatio="none">
+            <path d="M0,100 C300,200 900,0 1200,100 L1200,200 L0,200 Z" />
+        </svg>
+        <svg class="wave wave2" viewBox="0 0 1200 200" preserveAspectRatio="none">
+            <path d="M0,120 C400,20 800,200 1200,80 L1200,200 L0,200 Z" />
+        </svg>
+        <svg class="wave wave3" viewBox="0 0 1200 200" preserveAspectRatio="none">
+            <path d="M0,90 C250,160 950,30 1200,100 L1200,200 L0,200 Z" />
+        </svg>
+    </div>
+</div>
