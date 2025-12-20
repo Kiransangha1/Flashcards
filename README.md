@@ -9,11 +9,15 @@ This project was created to gain hands-on experience building a real-world web a
 In addition, the project provided an opportunity to understand how structured applications are designed, maintained, and scaled using professional standards and architectural patterns. By developing a flashcards platform—a familiar and practical learning tool—the project applies academic concepts within a real-world software development context.
 
 ## Key Features
-Flashcard Management: Users can create, edit, and delete flashcards to store study content.
-Folder Organization: Flashcards can be grouped into folders, making it easier to manage large sets of information.
-User Accounts: The application includes basic user registration and login functionality, allowing users to manage their own data.
-Persistent Data Storage: All flashcards and folders are stored in a database, ensuring data is saved between sessions.
-Web-Based Interface: The application is accessible through a browser with a clean layout and responsive design.
+Flashcard Management:          Users can create, edit, and delete flashcards to store study content.
+
+Folder Organization:           Flashcards can be grouped into folders, making it easier to manage large sets of information.
+
+User Accounts:                 The application includes basic user registration and login functionality, allowing users to manage their own data.
+
+Persistent Data Storage:       All flashcards and folders are stored in a database, ensuring data is saved between sessions.
+
+Web-Based Interface:           The application is accessible through a browser with a clean layout and responsive design.
 
 ## Installation
 git clone https://github.com/Kiransangha1/Flashcard.git
