@@ -15,4 +15,27 @@ User Accounts: The application includes basic user registration and login functi
 Persistent Data Storage: All flashcards and folders are stored in a database, ensuring data is saved between sessions.
 Web-Based Interface: The application is accessible through a browser with a clean layout and responsive design.
 
+## Installation
+git clone https://github.com/Kiransangha1/Flashcard.git
+cd Flashcard
+dotnet restore
+dotnet ef database update
+dotnet run
+
+## Usage
+- Register a new user account.
+- Log in to the application.
+- Create folders to organize flashcards.
+- Add flashcards within folders.
+- View, edit, or delete flashcards as needed.
+- Use the “Take a Break” breathing feature to reset focus during study sessions.
+
+## Screenshots
+<img width="300" height="300" alt="Screenshot 2025-12-19 140838" src="https://github.com/user-attachments/assets/d75d0101-72d9-4f14-84d4-a4c2c07d0d5a" />
+<img width="300" height="300" alt="Screenshot 2025-12-19 140801" src="https://github.com/user-attachments/assets/b28111ad-57e9-4035-8d3d-5ff4953968af" />
+<img width="300" height="300" alt="Screenshot 2025-12-19 140731" src="https://github.com/user-attachments/assets/43bb03ef-7b55-455e-ab9a-39d89440a7d6" />
+<img width="300" height="300" alt="Screenshot 2025-12-19 140656" src="https://github.com/user-attachments/assets/f453c8bc-5a95-4704-9135-34a5e1784604" />
+<img width="300" height="300" alt="Screenshot 2025-12-19 140204" src="https://github.com/user-attachments/assets/6263282c-a71f-449c-a897-696c28ee5720" />
+<img width="300" height="300" alt="Screenshot 2025-12-19 140110" src="https://github.com/user-attachments/assets/5341ab7f-3b6b-4c3e-a9d3-6d8c0f85e573" />
+<img width="300" height="300" alt="Screenshot 2025-12-19 140044" src="https://github.com/user-attachments/assets/a46994d9-ac52-4e22-bfcd-a7aa65353606" />
 
