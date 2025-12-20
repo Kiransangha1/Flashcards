@@ -20,11 +20,11 @@ Persistent Data Storage:       All flashcards and folders are stored in a databa
 Web-Based Interface:           The application is accessible through a browser with a clean layout and responsive design.
 
 ## Installation
-git clone https://github.com/Kiransangha1/Flashcard.git
-cd Flashcard
-dotnet restore
-dotnet ef database update
-dotnet run
+1. git clone https://github.com/Kiransangha1/Flashcard.git
+2. cd Flashcard
+3. dotnet restore
+4. dotnet ef database update
+5. dotnet run
 
 ## Usage
 - Register a new user account.
